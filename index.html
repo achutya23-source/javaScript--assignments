@@ -3,16 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>JavaScript Assignments | Rubini</title>
+<title>JavaScript Assignments</title>
 
 <style>
 * {
     box-sizing: border-box;
-    margin: 0;
-    padding: 0;
 }
 
 body {
+    margin: 0;
     font-family: Arial, sans-serif;
     background: #f4f6fb;
     color: #222;
@@ -20,18 +19,15 @@ body {
 }
 
 header {
-    background: linear-gradient(135deg, #5b4bdb, #8e44ad);
+    background: linear-gradient(135deg, #5145cd, #8b43a8);
     color: white;
     text-align: center;
-    padding: 30px 15px;
+    padding: 28px 12px;
 }
 
 header h1 {
-    font-size: 27px;
-}
-
-header p {
-    margin-top: 8px;
+    margin: 0;
+    font-size: 28px;
 }
 
 .container {
@@ -49,57 +45,49 @@ header p {
 }
 
 h2 {
-    color: #5b4bdb;
-    margin-bottom: 10px;
+    color: #5145cd;
+    font-size: 21px;
 }
 
 h3 {
-    margin: 14px 0 8px;
+    margin-bottom: 8px;
 }
 
 pre {
     background: #20232b;
-    color: #a9f5bc;
+    color: #b5f5c6;
     padding: 15px;
     border-radius: 8px;
-    overflow-x: auto;
     white-space: pre-wrap;
     overflow-wrap: anywhere;
+    overflow-x: auto;
     font-size: 13px;
-}
-
-button {
-    background: #5b4bdb;
-    color: white;
-    border: none;
-    padding: 11px 18px;
-    margin-top: 12px;
-    border-radius: 7px;
-    cursor: pointer;
-    font-size: 15px;
-}
-
-button:hover {
-    background: #4334b5;
 }
 
 .output {
     background: #f0f1f5;
-    padding: 13px;
-    border-left: 4px solid #5b4bdb;
+    border-left: 4px solid #5145cd;
+    padding: 14px;
+    margin-top: 10px;
     border-radius: 6px;
-    margin-top: 12px;
     white-space: pre-wrap;
     overflow-wrap: anywhere;
-    min-height: 40px;
+    min-height: 45px;
 }
 
-input {
-    width: 100%;
-    padding: 10px;
-    margin: 6px 0;
-    border: 1px solid #ccc;
-    border-radius: 6px;
+button {
+    background: #5145cd;
+    color: white;
+    border: none;
+    padding: 11px 18px;
+    margin-top: 10px;
+    border-radius: 7px;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #392da7;
 }
 
 footer {
@@ -107,8 +95,8 @@ footer {
     color: white;
     text-align: center;
     padding: 20px;
-    margin-top: 30px;
 }
+
 </style>
 </head>
 
@@ -116,123 +104,179 @@ footer {
 
 <header>
     <h1>JavaScript Assignments</h1>
-    <p>Assignments 1–6 and Capstone Project</p>
+    <p>Assignments 1–6 & Capstone Mini Project</p>
     <p>Created by Rubini</p>
 </header>
 
-<div class="container">
+<main class="container">
 
+<!-- ASSIGNMENT 1 -->
 <section class="card">
 <h2>Assignment 1: Variables, Data Types, and Console Operations</h2>
-<p>Declare variables using var, let, and const. Check their data types.</p>
+
 <h3>JavaScript Code</h3>
 <pre id="code1"></pre>
+
 <button onclick="run1()">Run Assignment 1</button>
-<h3>Output</h3>
+
+<h3>Expected Output</h3>
 <div class="output" id="out1"></div>
 </section>
 
+<!-- ASSIGNMENT 2 -->
 <section class="card">
-<h2>Assignment 2: Arithmetic Operations</h2>
-<p>Perform arithmetic operations on two numbers.</p>
-<h3>Enter Values</h3>
-<input type="number" id="num1" value="100" placeholder="First number">
-<input type="number" id="num2" value="15" placeholder="Second number">
+<h2>Assignment 2: Operators, Expressions, and Input Handling</h2>
+
 <h3>JavaScript Code</h3>
 <pre id="code2"></pre>
+
 <button onclick="run2()">Run Assignment 2</button>
+
 <h3>Output</h3>
-<div class="output" id="out2"></div>
+<div class="output" id="out2">Click Run Assignment 2 to enter the bill amount and tip percentage.</div>
 </section>
 
+<!-- ASSIGNMENT 3 -->
 <section class="card">
-<h2>Assignment 3: Conditional Statements</h2>
-<p>Check grade and pass/fail status based on the score.</p>
-<h3>Enter Score</h3>
-<input type="number" id="score" value="85" min="0" max="100">
+<h2>Assignment 3: Conditional Logic Implementation</h2>
+
 <h3>JavaScript Code</h3>
 <pre id="code3"></pre>
+
 <button onclick="run3()">Run Assignment 3</button>
-<h3>Output</h3>
+
+<h3>Expected Output</h3>
 <div class="output" id="out3"></div>
 </section>
 
+<!-- ASSIGNMENT 4 -->
 <section class="card">
-<h2>Assignment 4: Loops and Searching</h2>
-<p>Display a multiplication table and search for a number.</p>
+<h2>Assignment 4: Loop Control Structures</h2>
+
 <h3>JavaScript Code</h3>
 <pre id="code4"></pre>
+
 <button onclick="run4()">Run Assignment 4</button>
-<h3>Output</h3>
+
+<h3>Expected Output</h3>
 <div class="output" id="out4"></div>
 </section>
 
+<!-- ASSIGNMENT 5 -->
 <section class="card">
-<h2>Assignment 5: Functions and Scope</h2>
-<p>Calculate areas using functions and demonstrate variable scope.</p>
+<h2>Assignment 5: Function Architecture and Scope</h2>
+
 <h3>JavaScript Code</h3>
 <pre id="code5"></pre>
+
 <button onclick="run5()">Run Assignment 5</button>
-<h3>Output</h3>
+
+<h3>Expected Output</h3>
 <div class="output" id="out5"></div>
 </section>
 
+<!-- ASSIGNMENT 6 -->
 <section class="card">
-<h2>Assignment 6: Array Methods</h2>
-<p>Use filter() and map() to process product data.</p>
+<h2>Assignment 6: Arrays, Objects, and Core Methods</h2>
+
 <h3>JavaScript Code</h3>
 <pre id="code6"></pre>
+
 <button onclick="run6()">Run Assignment 6</button>
-<h3>Output</h3>
+
+<h3>Expected Output</h3>
 <div class="output" id="out6"></div>
 </section>
 
+<!-- CAPSTONE -->
 <section class="card">
-<h2>Assessment 1: Inventory Management System</h2>
-<p>Add a product and display inventory details and analytics.</p>
-
-<input type="text" id="productName" placeholder="Enter product name">
-<input type="number" id="productPrice" placeholder="Enter product price">
+<h2>🚀 Capstone Mini Project</h2>
+<h3>Interactive Product Inventory & Analytics Dashboard</h3>
 
 <h3>JavaScript Code</h3>
 <pre id="codeCapstone"></pre>
-<button onclick="runCapstone()">Add Product / Run Project</button>
-<h3>Output</h3>
+
+<button onclick="runCapstone()">Run Capstone Project</button>
+
+<h3>Console Output Simulation</h3>
 <div class="output" id="outCapstone"></div>
 </section>
 
-</div>
+</main>
 
 <footer>
-    <p>JavaScript Assignments | Rubini © 2026</p>
+<p>JavaScript Assignments | Rubini © 2026</p>
 </footer>
 
 <script>
-const assignment1 = `var name = "Rubini";
-let age = 20;
-const isEmployed = false;
-const skills = ["JavaScript", "HTML", "CSS"];
 
-console.log("Name:", name);
-console.log("Age:", age);
-console.log("Employment Status:", isEmployed);
-console.log("Skills:", skills);
+// ASSIGNMENT 1
+const assignment1Code = `var name = "Alice";
+let age = 25;
+const isEmployed = true;
+const skills = ["HTML", "CSS", "JavaScript"];
 
-console.log("Type of name:", typeof name);
-console.log("Type of age:", typeof age);
-console.log("Type of employment status:", typeof isEmployed);
-console.log("Type of skills:", typeof skills);`;
+console.log("Name:", name, "(Type:", typeof name + ")");
+console.log("Age:", age, "(Type:", typeof age + ")");
+console.log("Is Employed:", isEmployed, "(Type:", typeof isEmployed + ")");
+console.log("Skills:", JSON.stringify(skills), "(Type:", typeof skills + ")");`;
 
-const assignment2 = `let a = 100;
-let b = 15;
+function run1() {
+    const name = "Alice";
+    const age = 25;
+    const isEmployed = true;
+    const skills = ["HTML", "CSS", "JavaScript"];
 
-console.log("Addition:", a + b);
-console.log("Subtraction:", a - b);
-console.log("Multiplication:", a * b);
-console.log("Division:", a / b);
-console.log("Remainder:", a % b);`;
+    document.getElementById("out1").textContent =
+`Name: ${name} (Type: ${typeof name})
+Age: ${age} (Type: ${typeof age})
+Is Employed: ${isEmployed} (Type: ${typeof isEmployed})
+Skills: ${JSON.stringify(skills)} (Type: ${typeof skills})`;
+}
 
-const assignment3 = `let score = 85;
+// ASSIGNMENT 2
+const assignment2Code = `const billAmount = Number(prompt("Enter bill amount:"));
+const tipPercentage = Number(prompt("Enter tip percentage:"));
+
+const calculatedTip = billAmount * tipPercentage / 100;
+let totalAmount = billAmount;
+totalAmount += calculatedTip;
+
+console.log("Subtotal: $" + billAmount);
+console.log("Tip Percentage: " + tipPercentage + "%");
+console.log("Calculated Tip: $" + calculatedTip);
+console.log("Total Amount to Pay: $" + totalAmount);`;
+
+function run2() {
+    const billAmount = Number(prompt("Enter bill amount:", "100"));
+
+    if (!Number.isFinite(billAmount) || billAmount < 0) {
+        document.getElementById("out2").textContent =
+            "Invalid bill amount. Please enter a valid number.";
+        return;
+    }
+
+    const tipPercentage = Number(prompt("Enter tip percentage:", "15"));
+
+    if (!Number.isFinite(tipPercentage) || tipPercentage < 0) {
+        document.getElementById("out2").textContent =
+            "Invalid tip percentage. Please enter a valid number.";
+        return;
+    }
+
+    const calculatedTip = billAmount * tipPercentage / 100;
+    let totalAmount = billAmount;
+    totalAmount += calculatedTip;
+
+    document.getElementById("out2").textContent =
+`Subtotal: $${billAmount}
+Tip Percentage: ${tipPercentage}%
+Calculated Tip: $${calculatedTip}
+Total Amount to Pay: $${totalAmount}`;
+}
+
+// ASSIGNMENT 3
+const assignment3Code = `const score = 85;
 let grade;
 
 if (score >= 90) {
@@ -247,241 +291,355 @@ if (score >= 90) {
     grade = "F";
 }
 
+switch (grade) {
+    case "A":
+        grade = "A";
+        break;
+    case "B":
+        grade = "B";
+        break;
+    case "C":
+        grade = "C";
+        break;
+    case "D":
+        grade = "D";
+        break;
+    default:
+        grade = "F";
+}
+
+const status = score >= 50 ? "Passed" : "Failed";
+
 console.log("Score:", score);
 console.log("Grade:", grade);
-console.log(score >= 50 ? "Passed" : "Failed");`;
-
-const assignment4 = `for (let i = 1; i <= 10; i++) {
-    console.log("5 x " + i + " = " + (5 * i));
-}
-
-const numbers = [4, 8, 12, 16, 20];
-const target = 12;
-
-if (numbers.includes(target)) {
-    console.log("Found:", target);
-} else {
-    console.log("Not Found:", target);
-}`;
-
-const assignment5 = `function rectangleArea(length, width) {
-    return length * width;
-}
-
-function circleArea(radius) {
-    return Math.PI * radius * radius;
-}
-
-console.log("Rectangle Area:", rectangleArea(10, 5));
-console.log("Circle Area:", circleArea(7));
-
-function scopeExample() {
-    let blockVar = "Inside block";
-    console.log(blockVar);
-}
-
-scopeExample();
-
-try {
-    console.log(blockVar);
-} catch (error) {
-    console.log("ReferenceError: blockVar is not defined");
-}`;
-
-const assignment6 = `const products = [
-    { name: "Laptop", price: 800 },
-    { name: "Mouse", price: 25 },
-    { name: "Keyboard", price: 50 },
-    { name: "Monitor", price: 150 }
-];
-
-const expensiveProducts = products.filter(
-    product => product.price > 100
-);
-
-const productTags = products.map(
-    product => product.name + " - $" + product.price
-);
-
-console.log("All Products:", products);
-console.log("Filtered Products:", expensiveProducts);
-console.log("Product Tags:", productTags);`;
-
-const capstoneCode = `const inventory = [
-    { name: "Laptop", price: 800 },
-    { name: "Mouse", price: 25 }
-];
-
-function addProduct(name, price) {
-    inventory.push({ name, price });
-}
-
-function displayInventory() {
-    console.log("Inventory:", inventory);
-    const total = inventory.reduce(
-        (sum, product) => sum + product.price, 0
-    );
-    console.log("Total Inventory Value: $" + total);
-}`;
-
-document.getElementById("code1").textContent = assignment1;
-document.getElementById("code2").textContent = assignment2;
-document.getElementById("code3").textContent = assignment3;
-document.getElementById("code4").textContent = assignment4;
-document.getElementById("code5").textContent = assignment5;
-document.getElementById("code6").textContent = assignment6;
-document.getElementById("codeCapstone").textContent = capstoneCode;
-
-function run1() {
-    const name = "Rubini";
-    const age = 20;
-    const isEmployed = false;
-    const skills = ["JavaScript", "HTML", "CSS"];
-
-    document.getElementById("out1").textContent =
-`Name: ${name}
-Age: ${age}
-Employment Status: ${isEmployed}
-Skills: ${JSON.stringify(skills)}
-Type of name: ${typeof name}
-Type of age: ${typeof age}
-Type of employment status: ${typeof isEmployed}
-Type of skills: ${typeof skills}`;
-}
-
-function run2() {
-    const a = Number(document.getElementById("num1").value);
-    const b = Number(document.getElementById("num2").value);
-
-    if (document.getElementById("num1").value === "" ||
-        document.getElementById("num2").value === "") {
-        document.getElementById("out2").textContent = "Please enter both numbers.";
-        return;
-    }
-
-    document.getElementById("out2").textContent =
-`Addition: ${a + b}
-Subtraction: ${a - b}
-Multiplication: ${a * b}
-Division: ${b !== 0 ? a / b : "Cannot divide by zero"}
-Remainder: ${b !== 0 ? a % b : "Cannot divide by zero"}`;
-}
+console.log("Status:", status);`;
 
 function run3() {
-    const score = Number(document.getElementById("score").value);
+    const score = 85;
     let grade;
 
-    if (document.getElementById("score").value === "" ||
-        score < 0 || score > 100) {
-        document.getElementById("out3").textContent = "Enter a score from 0 to 100.";
-        return;
+    if (score >= 90) {
+        grade = "A";
+    } else if (score >= 80) {
+        grade = "B";
+    } else if (score >= 70) {
+        grade = "C";
+    } else if (score >= 60) {
+        grade = "D";
+    } else {
+        grade = "F";
     }
 
-    if (score >= 90) grade = "A";
-    else if (score >= 80) grade = "B";
-    else if (score >= 70) grade = "C";
-    else if (score >= 60) grade = "D";
-    else grade = "F";
+    switch (grade) {
+        case "A": grade = "A"; break;
+        case "B": grade = "B"; break;
+        case "C": grade = "C"; break;
+        case "D": grade = "D"; break;
+        default: grade = "F";
+    }
+
+    const status = score >= 50 ? "Passed" : "Failed";
 
     document.getElementById("out3").textContent =
 `Score: ${score}
 Grade: ${grade}
-${score >= 50 ? "Passed" : "Failed"}`;
+Status: ${status}`;
 }
 
-function run4() {
-    let output = "";
+// ASSIGNMENT 4
+const assignment4Code = `console.log("-- Multiplication Table of 5 --");
 
-    for (let i = 1; i <= 10; i++) {
+for (let i = 1; i <= 5; i++) {
+    console.log("5 x " + i + " = " + (5 * i));
+}
+
+console.log("\\n-- First number > 10 divisible by 6 --");
+
+let number = 11;
+
+while (number > 10) {
+    if (number % 6 === 0) {
+        console.log("Found:", number);
+        break;
+    }
+    number++;
+}
+
+let skip = 0;
+do {
+    skip++;
+    if (skip === 2) continue;
+} while (skip < 3);`;
+
+function run4() {
+    let output = "-- Multiplication Table of 5 --\n";
+
+    for (let i = 1; i <= 5; i++) {
         output += `5 x ${i} = ${5 * i}\n`;
     }
 
-    const numbers = [4, 8, 12, 16, 20];
-    const target = 12;
+    output += "\n-- First number > 10 divisible by 6 --\n";
 
-    output += numbers.includes(target)
-        ? `Found: ${target}`
-        : `Not Found: ${target}`;
+    let number = 11;
+
+    while (number > 10) {
+        if (number % 6 === 0) {
+            output += `Found: ${number}`;
+            break;
+        }
+        number++;
+    }
+
+    let skip = 0;
+    do {
+        skip++;
+        if (skip === 2) continue;
+    } while (skip < 3);
 
     document.getElementById("out4").textContent = output;
 }
 
+// ASSIGNMENT 5
+const assignment5Code = `function rectangleArea(length = 5, width = 4) {
+    return length * width;
+}
+
+const arrowArea = (length = 5, width = 4) => length * width;
+
+console.log("Standard Function Area (Default 5x4):",
+    rectangleArea());
+
+console.log("Arrow Function Area (Custom 10x3):",
+    arrowArea(10, 3));
+
+{
+    let blockVar = "Inside block";
+}
+
+try {
+    console.log(blockVar);
+} catch (error) {
+    console.log("Scope Test Error: ReferenceError: blockVar is not defined (when accessed outside block)");
+}`;
+
 function run5() {
-    function rectangleArea(length, width) {
+    function rectangleArea(length = 5, width = 4) {
         return length * width;
     }
 
-    function circleArea(radius) {
-        return Math.PI * radius * radius;
+    const arrowArea = (length = 5, width = 4) => length * width;
+
+    let errorMessage;
+
+    {
+        let blockVar = "Inside block";
     }
 
-    function scopeExample() {
-        let blockVar = "Inside block";
-        return blockVar;
+    try {
+        console.log(blockVar);
+    } catch (error) {
+        errorMessage =
+            "Scope Test Error: ReferenceError: blockVar is not defined (when accessed outside block)";
     }
 
     document.getElementById("out5").textContent =
-`Rectangle Area: ${rectangleArea(10, 5)}
-Circle Area: ${circleArea(7).toFixed(2)}
-${scopeExample()}
-ReferenceError: blockVar is not defined`;
+`Standard Function Area (Default 5x4): ${rectangleArea()}
+Arrow Function Area (Custom 10x3): ${arrowArea(10, 3)}
+${errorMessage}`;
 }
+
+// ASSIGNMENT 6
+const assignment6Code = `const products = [
+    { name: "Laptop", price: 800 },
+    { name: "Mouse", price: 25 },
+    { name: "Keyboard", price: 45 }
+];
+
+console.log("-- All Products (forEach) --");
+
+products.forEach(product => {
+    console.log("Item:", product.name, "- Price: $" + product.price);
+});
+
+const affordable = products.filter(product => product.price < 50);
+
+console.log("-- Filtered Products (Price < $50) --");
+console.log(affordable);
+
+const productTags = products.map(
+    product => product.name.toUpperCase() + " costs $" + product.price
+);
+
+console.log("-- Mapped Product Tags (map) --");
+console.log(productTags);`;
 
 function run6() {
     const products = [
         { name: "Laptop", price: 800 },
         { name: "Mouse", price: 25 },
-        { name: "Keyboard", price: 50 },
-        { name: "Monitor", price: 150 }
+        { name: "Keyboard", price: 45 }
     ];
 
-    const expensiveProducts = products.filter(
-        product => product.price > 100
-    );
+    let output = "-- All Products (forEach) --\n";
+
+    products.forEach(product => {
+        output += `Item: ${product.name} - Price: $${product.price}\n`;
+    });
+
+    const affordable = products.filter(product => product.price < 50);
+
+    const filteredText =
+        `[ ${affordable.map(p => `{ name: '${p.name}', price: ${p.price} }`).join(", ")} ]`;
 
     const productTags = products.map(
-        product => `${product.name} - $${product.price}`
+        product => `${product.name.toUpperCase()} costs $${product.price}`
     );
 
-    document.getElementById("out6").textContent =
-`All Products: ${JSON.stringify(products, null, 2)}
-Filtered Products: ${JSON.stringify(expensiveProducts, null, 2)}
-Product Tags: ${JSON.stringify(productTags)}`;
+    output += "\n-- Filtered Products (Price < $50) --\n";
+    output += filteredText;
+    output += "\n\n-- Mapped Product Tags (map) --\n";
+    output += `[ ${productTags.map(tag => `"${tag}"`).join(", ")} ]`;
+
+    document.getElementById("out6").textContent = output;
 }
 
-let inventory = [
+// CAPSTONE PROJECT
+const capstoneCode = `console.log("--- Initializing Inventory System ---");
+
+const inventory = [
     { name: "Laptop", price: 800 },
     { name: "Mouse", price: 25 }
 ];
 
+const newProductName = prompt("Enter new product name:", "Monitor");
+const newProductPrice = Number(prompt("Enter product price:", "150"));
+
+if (newProductName && Number.isFinite(newProductPrice) && newProductPrice >= 0) {
+    inventory.push({
+        name: newProductName,
+        price: newProductPrice
+    });
+}
+
+function getCategory(price) {
+    if (price < 100) {
+        return "Budget";
+    } else if (price >= 500) {
+        return "Premium";
+    } else {
+        return "Standard";
+    }
+}
+
+console.log("\\n--- Processing Inventory Roster (forEach) ---");
+
+inventory.forEach(product => {
+    console.log(
+        "* Item: " + product.name + " ($" + product.price +
+        ") -> Category: " + getCategory(product.price)
+    );
+});
+
+const totalValue = inventory.reduce(
+    (sum, product) => sum + product.price, 0
+);
+
+const affordableItems = inventory
+    .filter(product => product.price < 200)
+    .map(product => product.name);
+
+const formattedReport = inventory.map(
+    product => product.name.toUpperCase() + ": $" + product.price
+);
+
+console.log("\\n--- Financial Analytics ---");
+console.log("Total Inventory Value: $" + totalValue);
+console.log("Filtered Affordable Items (Under $200):",
+    JSON.stringify(affordableItems));
+console.log("Formatted Report List:",
+    JSON.stringify(formattedReport));`;
+
 function runCapstone() {
-    const nameInput = document.getElementById("productName");
-    const priceInput = document.getElementById("productPrice");
+    const inventory = [
+        { name: "Laptop", price: 800 },
+        { name: "Mouse", price: 25 }
+    ];
 
-    const name = nameInput.value.trim();
-    const price = Number(priceInput.value);
+    const newProductName = prompt("Enter new product name:", "Monitor");
 
-    if (!name || priceInput.value === "" || !Number.isFinite(price) || price < 0) {
+    if (newProductName === null || newProductName.trim() === "") {
         document.getElementById("outCapstone").textContent =
-            "Please enter a product name and a valid price.";
+            "Invalid or missing product name.";
         return;
     }
 
-    inventory.push({ name: name, price: price });
+    const newProductPrice = Number(prompt("Enter product price:", "150"));
 
-    const total = inventory.reduce(
+    if (!Number.isFinite(newProductPrice) || newProductPrice < 0) {
+        document.getElementById("outCapstone").textContent =
+            "Invalid product price.";
+        return;
+    }
+
+    inventory.push({
+        name: newProductName.trim(),
+        price: newProductPrice
+    });
+
+    function getCategory(price) {
+        if (price < 100) {
+            return "Budget";
+        } else if (price >= 500) {
+            return "Premium";
+        } else {
+            return "Standard";
+        }
+    }
+
+    let output = "--- Initializing Inventory System ---\n";
+    output += `[Prompt executed: User adds "${newProductName.trim()}" at "$${newProductPrice}"]`;
+    output += "\n\n--- Processing Inventory Roster (forEach) ---\n";
+
+    inventory.forEach(product => {
+        output += `* Item: ${product.name} ($${product.price}) -> Category: ${getCategory(product.price)}\n`;
+    });
+
+    const totalValue = inventory.reduce(
         (sum, product) => sum + product.price, 0
     );
 
-    document.getElementById("outCapstone").textContent =
-`Inventory:
-${JSON.stringify(inventory, null, 2)}
+    const affordableItems = inventory
+        .filter(product => product.price < 200)
+        .map(product => product.name);
 
-Total Inventory Value: $${total.toFixed(2)}`;
+    const formattedReport = inventory.map(
+        product => `${product.name.toUpperCase()}: $${product.price}`
+    );
 
-    nameInput.value = "";
-    priceInput.value = "";
+    output += "\n--- Financial Analytics ---\n";
+    output += `Total Inventory Value: $${totalValue}\n`;
+    output += `Filtered Affordable Items (Under $200): ${JSON.stringify(affordableItems)}\n`;
+    output += `Formatted Report List: ${JSON.stringify(formattedReport)}`;
+
+    document.getElementById("outCapstone").textContent = output;
 }
+
+// DISPLAY ALL JAVASCRIPT SOURCE CODE
+document.getElementById("code1").textContent = assignment1Code;
+document.getElementById("code2").textContent = assignment2Code;
+document.getElementById("code3").textContent = assignment3Code;
+document.getElementById("code4").textContent = assignment4Code;
+document.getElementById("code5").textContent = assignment5Code;
+document.getElementById("code6").textContent = assignment6Code;
+document.getElementById("codeCapstone").textContent = capstoneCode;
+
+// SHOW DEFAULT EXPECTED OUTPUTS
+run1();
+run3();
+run4();
+run5();
+run6();
+
 </script>
 
 </body>
