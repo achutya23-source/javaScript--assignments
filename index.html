@@ -1,100 +1,489 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JavaScript Assignments</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JavaScript Assignments | Rubini</title>
 
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+<style>
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 
-        body {
-            font-family: Arial, sans-serif;
-            background: #100d20;
-            color: #f5f0ff;
-            min-height: 100vh;
-            padding: 25px 15px;
-        }
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f6fb;
+    color: #222;
+    line-height: 1.6;
+}
 
-        .container {
-            max-width: 950px;
-            margin: auto;
-        }
+header {
+    background: linear-gradient(135deg, #5b4bdb, #8e44ad);
+    color: white;
+    text-align: center;
+    padding: 30px 15px;
+}
 
-        header {
-            text-align: center;
-            padding: 35px 15px;
-            margin-bottom: 25px;
-            background: linear-gradient(135deg, #30204f, #17132b);
-            border: 1px solid #7553a8;
-            border-radius: 20px;
-        }
+header h1 {
+    font-size: 27px;
+}
 
-        header h1 {
-            font-size: 30px;
-            color: #d9b8ff;
-            margin-bottom: 12px;
-        }
+header p {
+    margin-top: 8px;
+}
 
-        header p {
-            color: #d0c5e5;
-            line-height: 1.6;
-        }
+.container {
+    width: 92%;
+    max-width: 950px;
+    margin: 25px auto;
+}
 
-        .card {
-            background: #1b1730;
-            border: 1px solid #41325e;
-            border-radius: 16px;
-            padding: 22px;
-            margin-bottom: 20px;
-        }
+.card {
+    background: white;
+    padding: 20px;
+    margin-bottom: 22px;
+    border-radius: 12px;
+    box-shadow: 0 3px 12px #00000012;
+}
 
-        .card h2 {
-            color: #d9b8ff;
-            font-size: 21px;
-            margin-bottom: 12px;
-        }
+h2 {
+    color: #5b4bdb;
+    margin-bottom: 10px;
+}
 
-        .card p {
-            color: #c9bfdc;
-            line-height: 1.6;
-            margin-bottom: 15px;
-        }
+h3 {
+    margin: 14px 0 8px;
+}
 
-        button {
-            display: block;
-            width: 100%;
-            padding: 15px;
-            background: linear-gradient(135deg, #a56bff, #7540c8);
-            color: white;
-            border: none;
-            border-radius: 10px;
-            font-size: 16px;
-            font-weight: bold;
-            cursor: pointer;
-            transition: 0.3s;
-        }
+pre {
+    background: #20232b;
+    color: #a9f5bc;
+    padding: 15px;
+    border-radius: 8px;
+    overflow-x: auto;
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+    font-size: 13px;
+}
 
-        button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 18px #a56bff55;
-        }
+button {
+    background: #5b4bdb;
+    color: white;
+    border: none;
+    padding: 11px 18px;
+    margin-top: 12px;
+    border-radius: 7px;
+    cursor: pointer;
+    font-size: 15px;
+}
 
-        .output-card {
-            background: #090b13;
-            border: 1px solid #7553a8;
-            border-radius: 16px;
-            padding: 22px;
-            margin-top: 25px;
-        }
+button:hover {
+    background: #4334b5;
+}
 
-        .output-card h2 {
-            color: #bfa0ff;
-            margin-bottom: 15px;
-        }
+.output {
+    background: #f0f1f5;
+    padding: 13px;
+    border-left: 4px solid #5b4bdb;
+    border-radius: 6px;
+    margin-top: 12px;
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+    min-height: 40px;
+}
 
-        #output
+input {
+    width: 100%;
+    padding: 10px;
+    margin: 6px 0;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+footer {
+    background: #25243a;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 30px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>JavaScript Assignments</h1>
+    <p>Assignments 1–6 and Capstone Project</p>
+    <p>Created by Rubini</p>
+</header>
+
+<div class="container">
+
+<section class="card">
+<h2>Assignment 1: Variables, Data Types, and Console Operations</h2>
+<p>Declare variables using var, let, and const. Check their data types.</p>
+<h3>JavaScript Code</h3>
+<pre id="code1"></pre>
+<button onclick="run1()">Run Assignment 1</button>
+<h3>Output</h3>
+<div class="output" id="out1"></div>
+</section>
+
+<section class="card">
+<h2>Assignment 2: Arithmetic Operations</h2>
+<p>Perform arithmetic operations on two numbers.</p>
+<h3>Enter Values</h3>
+<input type="number" id="num1" value="100" placeholder="First number">
+<input type="number" id="num2" value="15" placeholder="Second number">
+<h3>JavaScript Code</h3>
+<pre id="code2"></pre>
+<button onclick="run2()">Run Assignment 2</button>
+<h3>Output</h3>
+<div class="output" id="out2"></div>
+</section>
+
+<section class="card">
+<h2>Assignment 3: Conditional Statements</h2>
+<p>Check grade and pass/fail status based on the score.</p>
+<h3>Enter Score</h3>
+<input type="number" id="score" value="85" min="0" max="100">
+<h3>JavaScript Code</h3>
+<pre id="code3"></pre>
+<button onclick="run3()">Run Assignment 3</button>
+<h3>Output</h3>
+<div class="output" id="out3"></div>
+</section>
+
+<section class="card">
+<h2>Assignment 4: Loops and Searching</h2>
+<p>Display a multiplication table and search for a number.</p>
+<h3>JavaScript Code</h3>
+<pre id="code4"></pre>
+<button onclick="run4()">Run Assignment 4</button>
+<h3>Output</h3>
+<div class="output" id="out4"></div>
+</section>
+
+<section class="card">
+<h2>Assignment 5: Functions and Scope</h2>
+<p>Calculate areas using functions and demonstrate variable scope.</p>
+<h3>JavaScript Code</h3>
+<pre id="code5"></pre>
+<button onclick="run5()">Run Assignment 5</button>
+<h3>Output</h3>
+<div class="output" id="out5"></div>
+</section>
+
+<section class="card">
+<h2>Assignment 6: Array Methods</h2>
+<p>Use filter() and map() to process product data.</p>
+<h3>JavaScript Code</h3>
+<pre id="code6"></pre>
+<button onclick="run6()">Run Assignment 6</button>
+<h3>Output</h3>
+<div class="output" id="out6"></div>
+</section>
+
+<section class="card">
+<h2>Assessment 1: Inventory Management System</h2>
+<p>Add a product and display inventory details and analytics.</p>
+
+<input type="text" id="productName" placeholder="Enter product name">
+<input type="number" id="productPrice" placeholder="Enter product price">
+
+<h3>JavaScript Code</h3>
+<pre id="codeCapstone"></pre>
+<button onclick="runCapstone()">Add Product / Run Project</button>
+<h3>Output</h3>
+<div class="output" id="outCapstone"></div>
+</section>
+
+</div>
+
+<footer>
+    <p>JavaScript Assignments | Rubini © 2026</p>
+</footer>
+
+<script>
+const assignment1 = `var name = "Rubini";
+let age = 20;
+const isEmployed = true;
+const skills = ["JavaScript", "HTML", "CSS"];
+
+console.log("Name:", name);
+console.log("Age:", age);
+console.log("Employment Status:", isEmployed);
+console.log("Skills:", skills);
+
+console.log("Type of name:", typeof name);
+console.log("Type of age:", typeof age);
+console.log("Type of employment status:", typeof isEmployed);
+console.log("Type of skills:", typeof skills);`;
+
+const assignment2 = `let a = 100;
+let b = 15;
+
+console.log("Addition:", a + b);
+console.log("Subtraction:", a - b);
+console.log("Multiplication:", a * b);
+console.log("Division:", a / b);
+console.log("Remainder:", a % b);`;
+
+const assignment3 = `let score = 85;
+let grade;
+
+if (score >= 90) {
+    grade = "A";
+} else if (score >= 80) {
+    grade = "B";
+} else if (score >= 70) {
+    grade = "C";
+} else if (score >= 60) {
+    grade = "D";
+} else {
+    grade = "F";
+}
+
+console.log("Score:", score);
+console.log("Grade:", grade);
+console.log(score >= 50 ? "Passed" : "Failed");`;
+
+const assignment4 = `for (let i = 1; i <= 10; i++) {
+    console.log("5 x " + i + " = " + (5 * i));
+}
+
+const numbers = [4, 8, 12, 16, 20];
+const target = 12;
+
+if (numbers.includes(target)) {
+    console.log("Found:", target);
+} else {
+    console.log("Not Found:", target);
+}`;
+
+const assignment5 = `function rectangleArea(length, width) {
+    return length * width;
+}
+
+function circleArea(radius) {
+    return Math.PI * radius * radius;
+}
+
+console.log("Rectangle Area:", rectangleArea(10, 5));
+console.log("Circle Area:", circleArea(7));
+
+function scopeExample() {
+    let blockVar = "Inside block";
+    console.log(blockVar);
+}
+
+scopeExample();
+
+try {
+    console.log(blockVar);
+} catch (error) {
+    console.log("ReferenceError: blockVar is not defined");
+}`;
+
+const assignment6 = `const products = [
+    { name: "Laptop", price: 800 },
+    { name: "Mouse", price: 25 },
+    { name: "Keyboard", price: 50 },
+    { name: "Monitor", price: 150 }
+];
+
+const expensiveProducts = products.filter(
+    product => product.price > 100
+);
+
+const productTags = products.map(
+    product => product.name + " - $" + product.price
+);
+
+console.log("All Products:", products);
+console.log("Filtered Products:", expensiveProducts);
+console.log("Product Tags:", productTags);`;
+
+const capstoneCode = `const inventory = [
+    { name: "Laptop", price: 800 },
+    { name: "Mouse", price: 25 }
+];
+
+function addProduct(name, price) {
+    inventory.push({ name, price });
+}
+
+function displayInventory() {
+    console.log("Inventory:", inventory);
+    const total = inventory.reduce(
+        (sum, product) => sum + product.price, 0
+    );
+    console.log("Total Inventory Value: $" + total);
+}`;
+
+document.getElementById("code1").textContent = assignment1;
+document.getElementById("code2").textContent = assignment2;
+document.getElementById("code3").textContent = assignment3;
+document.getElementById("code4").textContent = assignment4;
+document.getElementById("code5").textContent = assignment5;
+document.getElementById("code6").textContent = assignment6;
+document.getElementById("codeCapstone").textContent = capstoneCode;
+
+function run1() {
+    const name = "Rubini";
+    const age = 20;
+    const isEmployed = false;
+    const skills = ["JavaScript", "HTML", "CSS"];
+
+    document.getElementById("out1").textContent =
+`Name: ${name}
+Age: ${age}
+Employment Status: ${isEmployed}
+Skills: ${JSON.stringify(skills)}
+Type of name: ${typeof name}
+Type of age: ${typeof age}
+Type of employment status: ${typeof isEmployed}
+Type of skills: ${typeof skills}`;
+}
+
+function run2() {
+    const a = Number(document.getElementById("num1").value);
+    const b = Number(document.getElementById("num2").value);
+
+    if (document.getElementById("num1").value === "" ||
+        document.getElementById("num2").value === "") {
+        document.getElementById("out2").textContent = "Please enter both numbers.";
+        return;
+    }
+
+    document.getElementById("out2").textContent =
+`Addition: ${a + b}
+Subtraction: ${a - b}
+Multiplication: ${a * b}
+Division: ${b !== 0 ? a / b : "Cannot divide by zero"}
+Remainder: ${b !== 0 ? a % b : "Cannot divide by zero"}`;
+}
+
+function run3() {
+    const score = Number(document.getElementById("score").value);
+    let grade;
+
+    if (document.getElementById("score").value === "" ||
+        score < 0 || score > 100) {
+        document.getElementById("out3").textContent = "Enter a score from 0 to 100.";
+        return;
+    }
+
+    if (score >= 90) grade = "A";
+    else if (score >= 80) grade = "B";
+    else if (score >= 70) grade = "C";
+    else if (score >= 60) grade = "D";
+    else grade = "F";
+
+    document.getElementById("out3").textContent =
+`Score: ${score}
+Grade: ${grade}
+${score >= 50 ? "Passed" : "Failed"}`;
+}
+
+function run4() {
+    let output = "";
+
+    for (let i = 1; i <= 10; i++) {
+        output += `5 x ${i} = ${5 * i}\n`;
+    }
+
+    const numbers = [4, 8, 12, 16, 20];
+    const target = 12;
+
+    output += numbers.includes(target)
+        ? `Found: ${target}`
+        : `Not Found: ${target}`;
+
+    document.getElementById("out4").textContent = output;
+}
+
+function run5() {
+    function rectangleArea(length, width) {
+        return length * width;
+    }
+
+    function circleArea(radius) {
+        return Math.PI * radius * radius;
+    }
+
+    function scopeExample() {
+        let blockVar = "Inside block";
+        return blockVar;
+    }
+
+    document.getElementById("out5").textContent =
+`Rectangle Area: ${rectangleArea(10, 5)}
+Circle Area: ${circleArea(7).toFixed(2)}
+${scopeExample()}
+ReferenceError: blockVar is not defined`;
+}
+
+function run6() {
+    const products = [
+        { name: "Laptop", price: 800 },
+        { name: "Mouse", price: 25 },
+        { name: "Keyboard", price: 50 },
+        { name: "Monitor", price: 150 }
+    ];
+
+    const expensiveProducts = products.filter(
+        product => product.price > 100
+    );
+
+    const productTags = products.map(
+        product => `${product.name} - $${product.price}`
+    );
+
+    document.getElementById("out6").textContent =
+`All Products: ${JSON.stringify(products, null, 2)}
+Filtered Products: ${JSON.stringify(expensiveProducts, null, 2)}
+Product Tags: ${JSON.stringify(productTags)}`;
+}
+
+let inventory = [
+    { name: "Laptop", price: 800 },
+    { name: "Mouse", price: 25 }
+];
+
+function runCapstone() {
+    const nameInput = document.getElementById("productName");
+    const priceInput = document.getElementById("productPrice");
+
+    const name = nameInput.value.trim();
+    const price = Number(priceInput.value);
+
+    if (!name || priceInput.value === "" || !Number.isFinite(price) || price < 0) {
+        document.getElementById("outCapstone").textContent =
+            "Please enter a product name and a valid price.";
+        return;
+    }
+
+    inventory.push({ name: name, price: price });
+
+    const total = inventory.reduce(
+        (sum, product) => sum + product.price, 0
+    );
+
+    document.getElementById("outCapstone").textContent =
+`Inventory:
+${JSON.stringify(inventory, null, 2)}
+
+Total Inventory Value: $${total.toFixed(2)}`;
+
+    nameInput.value = "";
+    priceInput.value = "";
+}
+</script>
+
+</body>
+</html>
