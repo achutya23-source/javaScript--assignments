@@ -1,489 +1,680 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>JavaScript Assignments | Rubini</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Product Inventory Dashboard</title>
 
-<style>
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-body {
-    font-family: Arial, sans-serif;
-    background: #f4f6fb;
-    color: #222;
-    line-height: 1.6;
-}
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f6fb;
+            color: #222;
+        }
 
-header {
-    background: linear-gradient(135deg, #5b4bdb, #8e44ad);
-    color: white;
-    text-align: center;
-    padding: 30px 15px;
-}
+        header {
+            background: linear-gradient(135deg, #635bff, #8e44ad);
+            color: white;
+            text-align: center;
+            padding: 30px 15px;
+        }
 
-header h1 {
-    font-size: 27px;
-}
+        header h1 {
+            margin-bottom: 10px;
+        }
 
-header p {
-    margin-top: 8px;
-}
+        header p {
+            font-size: 15px;
+        }
 
-.container {
-    width: 92%;
-    max-width: 950px;
-    margin: 25px auto;
-}
+        .container {
+            max-width: 1100px;
+            margin: 25px auto;
+            padding: 15px;
+        }
 
-.card {
-    background: white;
-    padding: 20px;
-    margin-bottom: 22px;
-    border-radius: 12px;
-    box-shadow: 0 3px 12px #00000012;
-}
+        .dashboard {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-bottom: 25px;
+        }
 
-h2 {
-    color: #5b4bdb;
-    margin-bottom: 10px;
-}
+        .card {
+            background: white;
+            padding: 22px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
 
-h3 {
-    margin: 14px 0 8px;
-}
+        .card h3 {
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 12px;
+        }
 
-pre {
-    background: #20232b;
-    color: #a9f5bc;
-    padding: 15px;
-    border-radius: 8px;
-    overflow-x: auto;
-    white-space: pre-wrap;
-    overflow-wrap: anywhere;
-    font-size: 13px;
-}
+        .card p {
+            color: #635bff;
+            font-size: 26px;
+            font-weight: bold;
+        }
 
-button {
-    background: #5b4bdb;
-    color: white;
-    border: none;
-    padding: 11px 18px;
-    margin-top: 12px;
-    border-radius: 7px;
-    cursor: pointer;
-    font-size: 15px;
-}
+        section {
+            background: white;
+            padding: 22px;
+            margin-bottom: 22px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+        }
 
-button:hover {
-    background: #4334b5;
-}
+        h2 {
+            margin-bottom: 18px;
+            color: #333;
+        }
 
-.output {
-    background: #f0f1f5;
-    padding: 13px;
-    border-left: 4px solid #5b4bdb;
-    border-radius: 6px;
-    margin-top: 12px;
-    white-space: pre-wrap;
-    overflow-wrap: anywhere;
-    min-height: 40px;
-}
+        .form-group {
+            margin-bottom: 15px;
+        }
 
-input {
-    width: 100%;
-    padding: 10px;
-    margin: 6px 0;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-}
+        label {
+            display: block;
+            margin-bottom: 7px;
+            font-weight: bold;
+        }
 
-footer {
-    background: #25243a;
-    color: white;
-    text-align: center;
-    padding: 20px;
-    margin-top: 30px;
-}
-</style>
+        input, select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 7px;
+            font-size: 15px;
+        }
+
+        button {
+            background: #635bff;
+            color: white;
+            border: none;
+            padding: 12px 18px;
+            border-radius: 7px;
+            cursor: pointer;
+            font-size: 14px;
+            margin: 4px 0;
+        }
+
+        button:hover {
+            background: #4b43d6;
+        }
+
+        .delete-btn {
+            background: #e74c3c;
+            padding: 8px 12px;
+        }
+
+        .delete-btn:hover {
+            background: #c0392b;
+        }
+
+        .search-box {
+            margin-bottom: 15px;
+        }
+
+        .table-container {
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 500px;
+        }
+
+        th, td {
+            padding: 14px 10px;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+        }
+
+        th {
+            background: #f5f5ff;
+            color: #555;
+        }
+
+        .badge {
+            padding: 6px 10px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        .Budget {
+            background: #d4edda;
+            color: #155724;
+        }
+
+        .Standard {
+            background: #fff3cd;
+            color: #856404;
+        }
+
+        .Premium {
+            background: #e4ddff;
+            color: #553c9a;
+        }
+
+        .report {
+            background: #202638;
+            color: #d9e2ff;
+            padding: 18px;
+            border-radius: 8px;
+            margin-top: 12px;
+            line-height: 1.8;
+            overflow-wrap: anywhere;
+        }
+
+        .report p {
+            margin-bottom: 5px;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 20px;
+            color: #777;
+        }
+
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 24px;
+            }
+
+            section {
+                padding: 15px;
+            }
+
+            .card {
+                padding: 16px;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-<header>
-    <h1>JavaScript Assignments</h1>
-    <p>Assignments 1–6 and Capstone Project</p>
-    <p>Created by Rubini</p>
-</header>
-
-<div class="container">
-
-<section class="card">
-<h2>Assignment 1: Variables, Data Types, and Console Operations</h2>
-<p>Declare variables using var, let, and const. Check their data types.</p>
-<h3>JavaScript Code</h3>
-<pre id="code1"></pre>
-<button onclick="run1()">Run Assignment 1</button>
-<h3>Output</h3>
-<div class="output" id="out1"></div>
-</section>
-
-<section class="card">
-<h2>Assignment 2: Arithmetic Operations</h2>
-<p>Perform arithmetic operations on two numbers.</p>
-<h3>Enter Values</h3>
-<input type="number" id="num1" value="100" placeholder="First number">
-<input type="number" id="num2" value="15" placeholder="Second number">
-<h3>JavaScript Code</h3>
-<pre id="code2"></pre>
-<button onclick="run2()">Run Assignment 2</button>
-<h3>Output</h3>
-<div class="output" id="out2"></div>
-</section>
-
-<section class="card">
-<h2>Assignment 3: Conditional Statements</h2>
-<p>Check grade and pass/fail status based on the score.</p>
-<h3>Enter Score</h3>
-<input type="number" id="score" value="85" min="0" max="100">
-<h3>JavaScript Code</h3>
-<pre id="code3"></pre>
-<button onclick="run3()">Run Assignment 3</button>
-<h3>Output</h3>
-<div class="output" id="out3"></div>
-</section>
-
-<section class="card">
-<h2>Assignment 4: Loops and Searching</h2>
-<p>Display a multiplication table and search for a number.</p>
-<h3>JavaScript Code</h3>
-<pre id="code4"></pre>
-<button onclick="run4()">Run Assignment 4</button>
-<h3>Output</h3>
-<div class="output" id="out4"></div>
-</section>
-
-<section class="card">
-<h2>Assignment 5: Functions and Scope</h2>
-<p>Calculate areas using functions and demonstrate variable scope.</p>
-<h3>JavaScript Code</h3>
-<pre id="code5"></pre>
-<button onclick="run5()">Run Assignment 5</button>
-<h3>Output</h3>
-<div class="output" id="out5"></div>
-</section>
-
-<section class="card">
-<h2>Assignment 6: Array Methods</h2>
-<p>Use filter() and map() to process product data.</p>
-<h3>JavaScript Code</h3>
-<pre id="code6"></pre>
-<button onclick="run6()">Run Assignment 6</button>
-<h3>Output</h3>
-<div class="output" id="out6"></div>
-</section>
-
-<section class="card">
-<h2>Assessment 1: Inventory Management System</h2>
-<p>Add a product and display inventory details and analytics.</p>
-
-<input type="text" id="productName" placeholder="Enter product name">
-<input type="number" id="productPrice" placeholder="Enter product price">
-
-<h3>JavaScript Code</h3>
-<pre id="codeCapstone"></pre>
-<button onclick="runCapstone()">Add Product / Run Project</button>
-<h3>Output</h3>
-<div class="output" id="outCapstone"></div>
-</section>
-
-</div>
-
-<footer>
-    <p>JavaScript Assignments | Rubini © 2026</p>
-</footer>
-
-<script>
-const assignment1 = `var name = "Rubini";
-let age = 20;
-const isEmployed = true;
-const skills = ["JavaScript", "HTML", "CSS"];
-
-console.log("Name:", name);
-console.log("Age:", age);
-console.log("Employment Status:", isEmployed);
-console.log("Skills:", skills);
-
-console.log("Type of name:", typeof name);
-console.log("Type of age:", typeof age);
-console.log("Type of employment status:", typeof isEmployed);
-console.log("Type of skills:", typeof skills);`;
-
-const assignment2 = `let a = 100;
-let b = 15;
-
-console.log("Addition:", a + b);
-console.log("Subtraction:", a - b);
-console.log("Multiplication:", a * b);
-console.log("Division:", a / b);
-console.log("Remainder:", a % b);`;
-
-const assignment3 = `let score = 85;
-let grade;
-
-if (score >= 90) {
-    grade = "A";
-} else if (score >= 80) {
-    grade = "B";
-} else if (score >= 70) {
-    grade = "C";
-} else if (score >= 60) {
-    grade = "D";
-} else {
-    grade = "F";
-}
-
-console.log("Score:", score);
-console.log("Grade:", grade);
-console.log(score >= 50 ? "Passed" : "Failed");`;
-
-const assignment4 = `for (let i = 1; i <= 10; i++) {
-    console.log("5 x " + i + " = " + (5 * i));
-}
-
-const numbers = [4, 8, 12, 16, 20];
-const target = 12;
-
-if (numbers.includes(target)) {
-    console.log("Found:", target);
-} else {
-    console.log("Not Found:", target);
-}`;
-
-const assignment5 = `function rectangleArea(length, width) {
-    return length * width;
-}
-
-function circleArea(radius) {
-    return Math.PI * radius * radius;
-}
-
-console.log("Rectangle Area:", rectangleArea(10, 5));
-console.log("Circle Area:", circleArea(7));
-
-function scopeExample() {
-    let blockVar = "Inside block";
-    console.log(blockVar);
-}
-
-scopeExample();
-
-try {
-    console.log(blockVar);
-} catch (error) {
-    console.log("ReferenceError: blockVar is not defined");
-}`;
-
-const assignment6 = `const products = [
-    { name: "Laptop", price: 800 },
-    { name: "Mouse", price: 25 },
-    { name: "Keyboard", price: 50 },
-    { name: "Monitor", price: 150 }
-];
-
-const expensiveProducts = products.filter(
-    product => product.price > 100
-);
-
-const productTags = products.map(
-    product => product.name + " - $" + product.price
-);
-
-console.log("All Products:", products);
-console.log("Filtered Products:", expensiveProducts);
-console.log("Product Tags:", productTags);`;
-
-const capstoneCode = `const inventory = [
-    { name: "Laptop", price: 800 },
-    { name: "Mouse", price: 25 }
-];
-
-function addProduct(name, price) {
-    inventory.push({ name, price });
-}
-
-function displayInventory() {
-    console.log("Inventory:", inventory);
-    const total = inventory.reduce(
-        (sum, product) => sum + product.price, 0
-    );
-    console.log("Total Inventory Value: $" + total);
-}`;
-
-document.getElementById("code1").textContent = assignment1;
-document.getElementById("code2").textContent = assignment2;
-document.getElementById("code3").textContent = assignment3;
-document.getElementById("code4").textContent = assignment4;
-document.getElementById("code5").textContent = assignment5;
-document.getElementById("code6").textContent = assignment6;
-document.getElementById("codeCapstone").textContent = capstoneCode;
-
-function run1() {
-    const name = "Rubini";
-    const age = 20;
-    const isEmployed = false;
-    const skills = ["JavaScript", "HTML", "CSS"];
-
-    document.getElementById("out1").textContent =
-`Name: ${name}
-Age: ${age}
-Employment Status: ${isEmployed}
-Skills: ${JSON.stringify(skills)}
-Type of name: ${typeof name}
-Type of age: ${typeof age}
-Type of employment status: ${typeof isEmployed}
-Type of skills: ${typeof skills}`;
-}
-
-function run2() {
-    const a = Number(document.getElementById("num1").value);
-    const b = Number(document.getElementById("num2").value);
-
-    if (document.getElementById("num1").value === "" ||
-        document.getElementById("num2").value === "") {
-        document.getElementById("out2").textContent = "Please enter both numbers.";
-        return;
-    }
-
-    document.getElementById("out2").textContent =
-`Addition: ${a + b}
-Subtraction: ${a - b}
-Multiplication: ${a * b}
-Division: ${b !== 0 ? a / b : "Cannot divide by zero"}
-Remainder: ${b !== 0 ? a % b : "Cannot divide by zero"}`;
-}
-
-function run3() {
-    const score = Number(document.getElementById("score").value);
-    let grade;
-
-    if (document.getElementById("score").value === "" ||
-        score < 0 || score > 100) {
-        document.getElementById("out3").textContent = "Enter a score from 0 to 100.";
-        return;
-    }
-
-    if (score >= 90) grade = "A";
-    else if (score >= 80) grade = "B";
-    else if (score >= 70) grade = "C";
-    else if (score >= 60) grade = "D";
-    else grade = "F";
-
-    document.getElementById("out3").textContent =
-`Score: ${score}
-Grade: ${grade}
-${score >= 50 ? "Passed" : "Failed"}`;
-}
-
-function run4() {
-    let output = "";
-
-    for (let i = 1; i <= 10; i++) {
-        output += `5 x ${i} = ${5 * i}\n`;
-    }
-
-    const numbers = [4, 8, 12, 16, 20];
-    const target = 12;
-
-    output += numbers.includes(target)
-        ? `Found: ${target}`
-        : `Not Found: ${target}`;
-
-    document.getElementById("out4").textContent = output;
-}
-
-function run5() {
-    function rectangleArea(length, width) {
-        return length * width;
-    }
-
-    function circleArea(radius) {
-        return Math.PI * radius * radius;
-    }
-
-    function scopeExample() {
-        let blockVar = "Inside block";
-        return blockVar;
-    }
-
-    document.getElementById("out5").textContent =
-`Rectangle Area: ${rectangleArea(10, 5)}
-Circle Area: ${circleArea(7).toFixed(2)}
-${scopeExample()}
-ReferenceError: blockVar is not defined`;
-}
-
-function run6() {
-    const products = [
-        { name: "Laptop", price: 800 },
-        { name: "Mouse", price: 25 },
-        { name: "Keyboard", price: 50 },
-        { name: "Monitor", price: 150 }
-    ];
-
-    const expensiveProducts = products.filter(
-        product => product.price > 100
-    );
-
-    const productTags = products.map(
-        product => `${product.name} - $${product.price}`
-    );
-
-    document.getElementById("out6").textContent =
-`All Products: ${JSON.stringify(products, null, 2)}
-Filtered Products: ${JSON.stringify(expensiveProducts, null, 2)}
-Product Tags: ${JSON.stringify(productTags)}`;
-}
-
-let inventory = [
-    { name: "Laptop", price: 800 },
-    { name: "Mouse", price: 25 }
-];
-
-function runCapstone() {
-    const nameInput = document.getElementById("productName");
-    const priceInput = document.getElementById("productPrice");
-
-    const name = nameInput.value.trim();
-    const price = Number(priceInput.value);
-
-    if (!name || priceInput.value === "" || !Number.isFinite(price) || price < 0) {
-        document.getElementById("outCapstone").textContent =
-            "Please enter a product name and a valid price.";
-        return;
-    }
-
-    inventory.push({ name: name, price: price });
-
-    const total = inventory.reduce(
-        (sum, product) => sum + product.price, 0
-    );
-
-    document.getElementById("outCapstone").textContent =
-`Inventory:
-${JSON.stringify(inventory, null, 2)}
-
-Total Inventory Value: $${total.toFixed(2)}`;
-
-    nameInput.value = "";
-    priceInput.value = "";
-}
-</script>
+    <header>
+        <h1>📦 Inventory Dashboard</h1>
+        <p>Interactive Product Inventory & Analytics System</p>
+    </header>
+
+    <div class="container">
+
+        <div class="dashboard">
+            <div class="card">
+                <h3>Total Inventory Value</h3>
+                <p id="totalValue">$975</p>
+            </div>
+
+            <div class="card">
+                <h3>Total Products</h3>
+                <p id="productCount">3</p>
+            </div>
+
+            <div class="card">
+                <h3>Affordable Products</h3>
+                <p id="affordableCount">2</p>
+            </div>
+        </div>
+
+        <section>
+            <h2>➕ Add New Product</h2>
+
+            <form id="productForm">
+                <div class="form-group">
+                    <label for="productName">Product Name</label>
+                    <input
+                        type="text"
+                        id="productName"
+                        placeholder="Enter product name"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="productPrice">Product Price ($)</label>
+                    <input
+                        type="number"
+                        id="productPrice"
+                        placeholder="Enter product price"
+                        min="0.01"
+                        step="0.01"
+                        required
+                    >
+                </div>
+
+                <button type="submit">Add Product</button>
+            </form>
+        </section>
+
+        <section>
+            <h2>📋 Product Inventory</h2>
+
+            <div class="search-box">
+                <input
+                    type="text"
+                    id="searchInput"
+                    placeholder="Search products..."
+                >
+            </div>
+
+            <div class="form-group">
+                <label for="categoryFilter">Filter by Category</label>
+                <select id="categoryFilter">
+                    <option value="All">All Categories</option>
+                    <option value="Budget">Budget</option>
+                    <option value="Standard">Standard</option>
+                    <option value="Premium">Premium</option>
+                </select>
+            </div>
+
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Product</th>
+                            <th>Price</th>
+                            <th>Category</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="inventoryBody"></tbody>
+                </table>
+            </div>
+        </section>
+
+        <section>
+            <h2>💰 Financial Analytics</h2>
+
+            <div class="form-group">
+                <label for="tax">Tax Percentage (%)</label>
+                <input type="number" id="tax" value="10" min="0" max="100">
+            </div>
+
+            <div class="form-group">
+                <label for="discount">Discount Percentage (%)</label>
+                <input type="number" id="discount" value="5" min="0" max="100">
+            </div>
+
+            <div class="report" id="financialReport"></div>
+        </section>
+
+        <section>
+            <h2>📊 Array Methods Report</h2>
+            <div class="report" id="arrayReport"></div>
+        </section>
+
+        <section>
+            <h2>💻 JavaScript Concepts Used</h2>
+
+            <p>✅ Assignment 1: Variables and Data Types</p>
+            <p>✅ Assignment 2: Operators and Input Handling</p>
+            <p>✅ Assignment 3: Conditional Statements</p>
+            <p>✅ Assignment 4: Loops and Flow Control</p>
+            <p>✅ Assignment 5: Functions and Scope</p>
+            <p>✅ Assignment 6: Arrays, Objects and Methods</p>
+            <p>✅ Capstone Project: Inventory and Analytics Dashboard</p>
+        </section>
+
+    </div>
+
+    <div class="footer">
+        <p>Interactive Product Inventory Dashboard | HTML, CSS & JavaScript</p>
+    </div>
+
+    <script>
+        // Assignment 1: Variables and Data Types
+
+        var dashboardName = "Inventory Dashboard";
+        let inventoryVersion = 1;
+        const isActive = true;
+
+        console.log("Name:", dashboardName, typeof dashboardName);
+        console.log("Version:", inventoryVersion, typeof inventoryVersion);
+        console.log("Active:", isActive, typeof isActive);
+
+
+        // Assignment 6: Arrays and Objects
+
+        let inventory = [
+            { id: 1, name: "Laptop", price: 800 },
+            { id: 2, name: "Mouse", price: 25 },
+            { id: 3, name: "Monitor", price: 150 }
+        ];
+
+        let nextId = 4;
+
+
+        // Assignment 3: Conditional Logic
+
+        function getCategory(price) {
+            if (price < 100) {
+                return "Budget";
+            } else if (price >= 500) {
+                return "Premium";
+            } else {
+                return "Standard";
+            }
+        }
+
+        function getCategoryBadge(price) {
+            let category = getCategory(price);
+
+            switch (category) {
+                case "Budget":
+                    return "Budget";
+
+                case "Standard":
+                    return "Standard";
+
+                case "Premium":
+                    return "Premium";
+
+                default:
+                    return "Standard";
+            }
+        }
+
+
+        // Assignment 5: Standard Function
+
+        function calculateTotal(items = inventory) {
+            let total = 0;
+
+            for (let i = 0; i < items.length; i++) {
+                if (!items[i]) {
+                    continue;
+                }
+
+                total += items[i].price;
+            }
+
+            return total;
+        }
+
+
+        // Assignment 5: Arrow Function
+
+        const calculateFinalPrice = (
+            price,
+            tax = 0,
+            discount = 0
+        ) => {
+            let finalPrice = price + price * tax / 100;
+            finalPrice -= finalPrice * discount / 100;
+
+            return finalPrice;
+        };
+
+
+        // Assignment 4: While Loop and Break
+
+        function findFirstDivisibleBySix() {
+            let number = 11;
+
+            while (number > 10) {
+                if (number % 6 === 0) {
+                    break;
+                }
+
+                number++;
+            }
+
+            return number;
+        }
+
+        console.log(
+            "First number > 10 divisible by 6:",
+            findFirstDivisibleBySix()
+        );
+
+
+        // Assignment 2: Operators and Type Conversion
+
+        function money(value) {
+            return "$" + Number(value).toLocaleString("en-US", {
+                minimumFractionDigits: 2,
+                maximumFractionDigits: 2
+            });
+        }
+
+
+        // Display Inventory
+
+        function renderInventory() {
+            const tbody = document.getElementById("inventoryBody");
+
+            const search = document
+                .getElementById("searchInput")
+                .value
+                .trim()
+                .toLowerCase();
+
+            const selectedCategory =
+                document.getElementById("categoryFilter").value;
+
+            tbody.innerHTML = "";
+
+            const filteredInventory = inventory.filter(item => {
+                const matchesSearch =
+                    item.name.toLowerCase().includes(search);
+
+                const matchesCategory =
+                    selectedCategory === "All" ||
+                    getCategoryBadge(item.price) === selectedCategory;
+
+                return matchesSearch && matchesCategory;
+            });
+
+            filteredInventory.forEach(item => {
+                const row = document.createElement("tr");
+
+                const productCell = document.createElement("td");
+                productCell.textContent = item.name;
+
+                const priceCell = document.createElement("td");
+                priceCell.textContent = money(item.price);
+
+                const categoryCell = document.createElement("td");
+                const badge = document.createElement("span");
+                badge.className = "badge " + getCategoryBadge(item.price);
+                badge.textContent = getCategoryBadge(item.price);
+                categoryCell.appendChild(badge);
+
+                const actionCell = document.createElement("td");
+                const deleteButton = document.createElement("button");
+
+                deleteButton.textContent = "Remove";
+                deleteButton.className = "delete-btn";
+
+                deleteButton.addEventListener("click", () => {
+                    inventory = inventory.filter(
+                        product => product.id !== item.id
+                    );
+
+                    renderAll();
+                });
+
+                actionCell.appendChild(deleteButton);
+
+                row.appendChild(productCell);
+                row.appendChild(priceCell);
+                row.appendChild(categoryCell);
+                row.appendChild(actionCell);
+
+                tbody.appendChild(row);
+            });
+
+            if (filteredInventory.length === 0) {
+                tbody.innerHTML =
+                    '<tr><td colspan="4">No products found.</td></tr>';
+            }
+        }
+
+
+        // Financial Analytics
+
+        function renderFinancialReport() {
+            const total = calculateTotal();
+
+            const tax = Number(document.getElementById("tax").value);
+            const discount = Number(
+                document.getElementById("discount").value
+            );
+
+            const safeTax =
+                Number.isFinite(tax) && tax >= 0 && tax <= 100 ? tax : 0;
+
+            const safeDiscount =
+                Number.isFinite(discount) &&
+                discount >= 0 &&
+                discount <= 100 ? discount : 0;
+
+            const finalTotal = calculateFinalPrice(
+                total,
+                safeTax,
+                safeDiscount
+            );
+
+            document.getElementById("totalValue").textContent =
+                money(total);
+
+            document.getElementById("productCount").textContent =
+                inventory.length;
+
+            const affordableItems = inventory.filter(
+                item => item.price < 200
+            );
+
+            document.getElementById("affordableCount").textContent =
+                affordableItems.length;
+
+            document.getElementById("financialReport").textContent =
+                "Total Inventory Value: " + money(total) +
+                "\nTax: " + safeTax + "%" +
+                "\nDiscount: " + safeDiscount + "%" +
+                "\nFinal Amount: " + money(finalTotal) +
+                "\nAffordable Products: " + affordableItems.length;
+        }
+
+
+        // Assignment 6: forEach(), filter(), and map()
+
+        function renderArrayReport() {
+            const affordableItems = inventory.filter(
+                item => item.price < 200
+            );
+
+            const formattedProducts = inventory.map(
+                item => item.name.toUpperCase() + ": " + money(item.price)
+            );
+
+            document.getElementById("arrayReport").textContent =
+                "Filtered Affordable Items:\n" +
+                JSON.stringify(
+                    affordableItems.map(item => item.name)
+                ) +
+                "\n\nFormatted Report List:\n" +
+                JSON.stringify(formattedProducts, null, 2);
+
+            console.log("-- All Products (forEach) --");
+
+            inventory.forEach(item => {
+                console.log(
+                    `Item: ${item.name} - Price: ${money(item.price)}`
+                );
+            });
+        }
+
+
+        // Update Website
+
+        function renderAll() {
+            renderInventory();
+            renderFinancialReport();
+            renderArrayReport();
+        }
+
+
+        // Add New Product
+
+        document.getElementById("productForm").addEventListener(
+            "submit",
+            function(event) {
+                event.preventDefault();
+
+                const name = document
+                    .getElementById("productName")
+                    .value
+                    .trim();
+
+                const price = Number(
+                    document.getElementById("productPrice").value
+                );
+
+                if (
+                    name === "" ||
+                    !Number.isFinite(price) ||
+                    price <= 0
+                ) {
+                    alert("Please enter a valid product name and price.");
+                    return;
+                }
+
+                inventory.push({
+                    id: nextId++,
+                    name: name,
+                    price: price
+                });
+
+                document.getElementById("productName").value = "";
+                document.getElementById("productPrice").value = "";
+
+                renderAll();
+            }
+        );
+
+
+        // Search and Filter
+
+        document.getElementById("searchInput").addEventListener(
+            "input",
+            renderInventory
+        );
+
+        document.getElementById("categoryFilter").addEventListener(
+            "change",
+            renderInventory
+        );
+
+        document.getElementById("tax").addEventListener(
+            "input",
+            renderFinancialReport
+        );
+
+        document.getElementById("discount").addEventListener(
+            "input",
+            renderFinancialReport
+        );
+
+
+        // Initial Display
+
+        renderAll();
+    </script>
 
 </body>
 </html>
