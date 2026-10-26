@@ -1,903 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>JavaScript Assignments | Rubini</title>
-
-<style>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
-body {
-    font-family: Arial, sans-serif;
-    background: #f4f5fb;
-    color: #24243a;
-    line-height: 1.6;
-}
-
-header {
-    background: linear-gradient(135deg, #5145cd, #9146a8);
-    color: white;
-    text-align: center;
-    padding: 42px 15px;
-}
-
-header h1 {
-    font-size: clamp(26px, 5vw, 38px);
-    margin-bottom: 8px;
-}
-
-header p {
-    font-size: 15px;
-}
-
-.badge {
-    display: inline-block;
-    margin-top: 15px;
-    padding: 6px 14px;
-    border: 1px solid #ffffff80;
-    border-radius: 30px;
-    font-size: 13px;
-}
-
-nav {
-    background: #fff;
-    padding: 13px 10px;
-    display: flex;
-    gap: 10px;
-    justify-content: center;
-    flex-wrap: wrap;
-    position: sticky;
-    top: 0;
-    z-index: 10;
-    box-shadow: 0 2px 8px #0000000c;
-}
-
-nav a {
-    text-decoration: none;
-    color: #5145cd;
-    font-size: 13px;
-    font-weight: bold;
-    padding: 5px 8px;
-}
-
-.container {
-    width: 92%;
-    max-width: 1000px;
-    margin: 28px auto;
-}
-
-.intro {
-    text-align: center;
-    margin-bottom: 25px;
-}
-
-.intro h2 {
-    color: #5145cd;
-    margin-bottom: 5px;
-}
-
-.card {
-    background: white;
-    border-radius: 14px;
-    padding: 22px;
-    margin-bottom: 25px;
-    box-shadow: 0 4px 18px #25243a0c;
-    border: 1px solid #e9e8f5;
-    scroll-margin-top: 80px;
-}
-
-.card h2 {
-    color: #5145cd;
-    font-size: 21px;
-    margin-bottom: 8px;
-}
-
-.description {
-    color: #666;
-    font-size: 14px;
-    margin-bottom: 17px;
-}
-
-.label {
-    display: block;
-    font-size: 13px;
-    font-weight: bold;
-    margin: 16px 0 8px;
-    color: #42415a;
-}
-
-pre {
-    background: #20212c;
-    color: #c5f6d2;
-    padding: 17px;
-    border-radius: 9px;
-    overflow-x: auto;
-    white-space: pre;
-    font-family: Consolas, monospace;
-    font-size: 13px;
-    line-height: 1.65;
-    tab-size: 4;
-}
-
-.output {
-    background: #f6f5fc;
-    border: 1px solid #e3e0f7;
-    border-left: 4px solid #5145cd;
-    padding: 15px;
-    border-radius: 8px;
-    white-space: pre-wrap;
-    overflow-wrap: anywhere;
-    font-family: Consolas, monospace;
-    font-size: 13px;
-    line-height: 1.8;
-    min-height: 48px;
-}
-
-button {
-    display: inline-block;
-    background: #5145cd;
-    color: white;
-    border: none;
-    padding: 11px 19px;
-    margin: 14px 0;
-    border-radius: 8px;
-    cursor: pointer;
-    font-size: 14px;
-    font-weight: bold;
-}
-
-button:hover {
-    background: #3e32ac;
-}
-
-.secondary {
-    background: #e9e7fb;
-    color: #5145cd;
-    margin-left: 5px;
-}
-
-footer {
-    background: #25243a;
-    color: white;
-    text-align: center;
-    padding: 25px 12px;
-    margin-top: 40px;
-}
-
-footer p {
-    font-size: 13px;
-}
-
-@media (max-width: 600px) {
-    header {
-        padding: 32px 12px;
-    }
-
-    .container {
-        width: 94%;
-        margin: 18px auto;
-    }
-
-    .card {
-        padding: 16px;
-    }
-
-    .card h2 {
-        font-size: 19px;
-    }
-
-    pre, .output {
-        font-size: 12px;
-        padding: 12px;
-    }
-
-    nav {
-        gap: 3px;
-    }
-}
-</style>
-</head>
-
-<body>
-
-<header>
-    <h1>JavaScript Assignments</h1>
-    <p>Learn • Code • Run • Practice</p>
-    <div class="badge">Assignments 1–6 + Capstone Project</div>
-</header>
-
-<nav>
-    <a href="#assignment1">Assignment 1</a>
-    <a href="#assignment2">Assignment 2</a>
-    <a href="#assignment3">Assignment 3</a>
-    <a href="#assignment4">Assignment 4</a>
-    <a href="#assignment5">Assignment 5</a>
-    <a href="#assignment6">Assignment 6</a>
-    <a href="#capstone">Capstone</a>
-</nav>
-
-<main class="container">
-
-    <div class="intro">
-        <h2>My JavaScript Projects</h2>
-        <p>Explore the source code and run each assignment below.</p>
-    </div>
-
-    <!-- ASSIGNMENT 1 -->
-    <section class="card" id="assignment1">
-        <h2>Assignment 1: Variables & Data Types</h2>
-        <p class="description">
-            Declare variables and check their data types using typeof.
-        </p>
-
-        <span class="label">JavaScript Source Code</span>
-        <pre id="code1"></pre>
-
-        <button onclick="run1()">▶ Run Assignment 1</button>
-
-        <span class="label">Output</span>
-        <div class="output" id="out1"></div>
-    </section>
-
-    <!-- ASSIGNMENT 2 -->
-    <section class="card" id="assignment2">
-        <h2>Assignment 2: Operators & Input Handling</h2>
-        <p class="description">
-            Calculate the bill, tip percentage and total amount.
-        </p>
-
-        <span class="label">JavaScript Source Code</span>
-        <pre id="code2"></pre>
-
-        <button onclick="run2()">▶ Run Assignment 2</button>
-
-        <span class="label">Output</span>
-        <div class="output" id="out2">Click Run to enter the bill amount and tip percentage.</div>
-    </section>
-
-    <!-- ASSIGNMENT 3 -->
-    <section class="card" id="assignment3">
-        <h2>Assignment 3: Conditional Logic</h2>
-        <p class="description">
-            Use if...else, switch and the ternary operator to determine a grade.
-        </p>
-
-        <span class="label">JavaScript Source Code</span>
-        <pre id="code3"></pre>
-
-        <button onclick="run3()">▶ Run Assignment 3</button>
-
-        <span class="label">Output</span>
-        <div class="output" id="out3"></div>
-    </section>
-
-    <!-- ASSIGNMENT 4 -->
-    <section class="card" id="assignment4">
-        <h2>Assignment 4: Loop Control Structures</h2>
-        <p class="description">
-            Explore for, while and do...while loops with break and continue.
-        </p>
-
-        <span class="label">JavaScript Source Code</span>
-        <pre id="code4"></pre>
-
-        <button onclick="run4()">▶ Run Assignment 4</button>
-
-        <span class="label">Output</span>
-        <div class="output" id="out4"></div>
-    </section>
-
-    <!-- ASSIGNMENT 5 -->
-    <section class="card" id="assignment5">
-        <h2>Assignment 5: Functions & Scope</h2>
-        <p class="description">
-            Calculate rectangle areas and demonstrate block scope.
-        </p>
-
-        <span class="label">JavaScript Source Code</span>
-        <pre id="code5"></pre>
-
-        <button onclick="run5()">▶ Run Assignment 5</button>
-
-        <span class="label">Output</span>
-        <div class="output" id="out5"></div>
-    </section>
-
-    <!-- ASSIGNMENT 6 -->
-    <section class="card" id="assignment6">
-        <h2>Assignment 6: Arrays, Objects & Methods</h2>
-        <p class="description">
-            Use forEach(), filter() and map() to process products.
-        </p>
-
-        <span class="label">JavaScript Source Code</span>
-        <pre id="code6"></pre>
-
-        <button onclick="run6()">▶ Run Assignment 6</button>
-
-        <span class="label">Output</span>
-        <div class="output" id="out6"></div>
-    </section>
-
-    <!-- CAPSTONE -->
-    <section class="card" id="capstone">
-        <h2>🚀 Capstone Mini Project</h2>
-        <p class="description">
-            Interactive Product Inventory & Analytics Dashboard.
-            Add a product and calculate inventory statistics.
-        </p>
-
-        <span class="label">JavaScript Source Code</span>
-        <pre id="codeCapstone"></pre>
-
-        <button onclick="runCapstone()">▶ Run Capstone Project</button>
-
-        <span class="label">Output</span>
-        <div class="output" id="outCapstone">Click Run to start the inventory project.</div>
-    </section>
-
-</main>
-
-<footer>
-    <p>JavaScript Assignments</p>
-    <p>Created by Rubini | 2026</p>
-</footer>
-
-<script>
-// The original assignment logic is retained below.
-// The website displays each source-code section and its output.
-
-const assignment1Code = `// ===============================
-// ASSIGNMENT 1
-// Variables, Data Types, Console Operations
-// ===============================
-
-console.log("-----Assignment 1-----");
-
-var name = "Alice";
-let age = 25;
-const isEmployed = true;
-const skills = ["HTML", "CSS", "JavaScript"];
-
-console.log("Name: " + name + " (Type: " + typeof name + ")");
-console.log("Age: " + age + " (Type: " + typeof age + ")");
-console.log("Is Employed: " + isEmployed + " (Type: " + typeof isEmployed + ")");
-console.log("Skills: " + JSON.stringify(skills) + " (Type: " + typeof skills + ")");`;
-
-const assignment2Code = `// ===============================
-// ASSIGNMENT 2
-// Operators, Expressions, Input Handling
-// ===============================
-
-console.log("----Assignment 2----");
-
-let billAmount = 100;
-let tipPercentage = 15;
-
-let calculatedTip = billAmount * tipPercentage / 100;
-let totalAmount = billAmount;
-
-totalAmount += calculatedTip;
-
-console.log("Subtotal: $" + billAmount);
-console.log("Tip Percentage: " + tipPercentage + "%");
-console.log("Calculated Tip: $" + calculatedTip);
-console.log("Total Amount to Pay: $" + totalAmount);`;
-
-const assignment3Code = `// ===============================
-// ASSIGNMENT 3
-// Conditional Logic Implementation
-// ===============================
-
-console.log("----Assignment 3----");
-
-let score = 85;
-let grade;
-
-if (score >= 90) {
-    grade = "A";
-} else if (score >= 80) {
-    grade = "B";
-} else if (score >= 70) {
-    grade = "C";
-} else if (score >= 60) {
-    grade = "D";
-} else {
-    grade = "F";
-}
-
-switch (grade) {
-    case "A":
-        grade = "A";
-        break;
-    case "B":
-        grade = "B";
-        break;
-    case "C":
-        grade = "C";
-        break;
-    case "D":
-        grade = "D";
-        break;
-    default:
-        grade = "F";
-}
-
-let status = score >= 40 ? "Passed" : "Failed";
-
-console.log("Score: " + score);
-console.log("Grade: " + grade);
-console.log("Status: " + status);`;
-
-const assignment4Code = `// ===============================
-// ASSIGNMENT 4
-// Loop Control Structures
-// ===============================
-
-console.log("-- Multiplication Table of 5 --");
-
-for (let i = 1; i <= 5; i++) {
-    console.log("5 x " + i + " = " + (5 * i));
-}
-
-console.log("");
-console.log("-- First number > 10 divisible by 6 --");
-
-let number = 11;
-
-while (true) {
-    if (number > 10 && number % 6 === 0) {
-        console.log("Found: " + number);
-        break;
-    }
-    number++;
-}
-
-let count = 0;
-
-do {
-    count++;
-
-    if (count === 3) {
-        continue;
-    }
-
-    console.log(count);
-
-} while (count < 5);`;
-
-const assignment5Code = `// ===============================
-// ASSIGNMENT 5
-// Function Architecture and Scope
-// ===============================
-
-function rectangleArea(length = 5, width = 4) {
-    return length * width;
-}
-
-const arrowArea = (length = 5, width = 4) => {
-    return length * width;
-};
-
-console.log(
-    "Standard Function Area (Default 5x4): " +
-    rectangleArea()
-);
-
-console.log(
-    "Arrow Function Area (Custom 10x3): " +
-    arrowArea(10, 3)
-);
-
-try {
-    {
-        let blockVar = "Inside block";
-    }
-
-    console.log(blockVar);
-
-} catch (error) {
-    console.log("Scope Test Error: " + error);
-}`;
-
-const assignment6Code = `// ===============================
-// ASSIGNMENT 6
-// Arrays, Objects, Core Methods
-// ===============================
-
-const products = [
-    { name: "Laptop", price: 800 },
-    { name: "Mouse", price: 25 },
-    { name: "Keyboard", price: 45 }
-];
-
-console.log("-- All Products (forEach) --");
-
-products.forEach(function(product) {
-    console.log(
-        "Item: " + product.name +
-        " - Price: $" + product.price
-    );
-});
-
-const affordableProducts = products.filter(function(product) {
-    return product.price < 50;
-});
-
-console.log("");
-console.log("-- Filtered Products (Price < $50) --");
-console.log(affordableProducts);
-
-const productTags = products.map(function(product) {
-    return product.name.toUpperCase() +
-        " costs $" + product.price;
-});
-
-console.log("");
-console.log("-- Mapped Product Tags (map) --");
-console.log(productTags);`;
-
-const capstoneCode = `// ===============================
-// CAPSTONE PROJECT
-// Product Inventory & Analytics Dashboard
-// ===============================
-
-console.log("--- Initializing Inventory System ---");
-
-const inventory = [
-    { name: "Laptop", price: 800 },
-    { name: "Mouse", price: 25 }
-];
-
-// Example of the new product entered by the user
-const newProductName = "Monitor";
-const newProductPrice = 150;
-
-if (
-    newProductName !== "" &&
-    Number.isFinite(newProductPrice) &&
-    newProductPrice >= 0
-) {
-    inventory.push({
-        name: newProductName,
-        price: Number(newProductPrice)
-    });
-}
-
-function getCategory(price) {
-    if (price < 100) {
-        return "Budget";
-    } else if (price >= 500) {
-        return "Premium";
-    } else {
-        return "Standard";
-    }
-}
-
-console.log("");
-console.log("--- Processing Inventory Roster (forEach) ---");
-
-inventory.forEach(function(product) {
-    console.log(
-        "* Item: " + product.name +
-        " ($" + product.price +
-        ") -> Category: " + getCategory(product.price)
-    );
-});
-
-const calculateTotal = (items) => {
-    let total = 0;
-
-    items.forEach(function(item) {
-        total += item.price;
-    });
-
-    return total;
-};
-
-const affordableItems = inventory.filter(function(product) {
-    return product.price < 200;
-});
-
-const reportList = inventory.map(function(product) {
-    return product.name.toUpperCase() + ": $" + product.price;
-});
-
-console.log("");
-console.log("--- Financial Analytics ---");
-
-console.log("Total Inventory Value: $" + calculateTotal(inventory));
-
-console.log(
-    "Filtered Affordable Items (Under $200): " +
-    JSON.stringify(affordableItems.map(function(product) {
-        return product.name;
-    }))
-);
-
-console.log(
-    "Formatted Report List: " +
-    JSON.stringify(reportList)
-);`;
-
-// Show the JavaScript code in each card.
-document.getElementById("code1").textContent = assignment1Code;
-document.getElementById("code2").textContent = assignment2Code;
-document.getElementById("code3").textContent = assignment3Code;
-document.getElementById("code4").textContent = assignment4Code;
-document.getElementById("code5").textContent = assignment5Code;
-document.getElementById("code6").textContent = assignment6Code;
-document.getElementById("codeCapstone").textContent = capstoneCode;
-
-// Assignment 1
-function run1() {
-    const name = "Alice";
-    const age = 25;
-    const isEmployed = true;
-    const skills = ["HTML", "CSS", "JavaScript"];
-
-    document.getElementById("out1").textContent =
-`-----Assignment 1-----
-Name: ${name} (Type: ${typeof name})
-Age: ${age} (Type: ${typeof age})
-Is Employed: ${isEmployed} (Type: ${typeof isEmployed})
-Skills: ${JSON.stringify(skills)} (Type: ${typeof skills})`;
-}
-
-// Assignment 2
-function run2() {
-    const billAmount = Number(prompt("Enter bill amount:", "100"));
-
-    if (!Number.isFinite(billAmount) || billAmount < 0) {
-        document.getElementById("out2").textContent =
-            "Invalid bill amount.";
-        return;
-    }
-
-    const tipPercentage = Number(prompt("Enter tip percentage:", "15"));
-
-    if (!Number.isFinite(tipPercentage) || tipPercentage < 0) {
-        document.getElementById("out2").textContent =
-            "Invalid tip percentage.";
-        return;
-    }
-
-    const calculatedTip = billAmount * tipPercentage / 100;
-    let totalAmount = billAmount;
-    totalAmount += calculatedTip;
-
-    document.getElementById("out2").textContent =
-`----Assignment 2----
-Subtotal: $${billAmount}
-Tip Percentage: ${tipPercentage}%
-Calculated Tip: $${calculatedTip}
-Total Amount to Pay: $${totalAmount}`;
-}
-
-// Assignment 3
-function run3() {
-    const score = 85;
-    let grade;
-
-    if (score >= 90) {
-        grade = "A";
-    } else if (score >= 80) {
-        grade = "B";
-    } else if (score >= 70) {
-        grade = "C";
-    } else if (score >= 60) {
-        grade = "D";
-    } else {
-        grade = "F";
-    }
-
-    switch (grade) {
-        case "A": grade = "A"; break;
-        case "B": grade = "B"; break;
-        case "C": grade = "C"; break;
-        case "D": grade = "D"; break;
-        default: grade = "F";
-    }
-
-    const status = score >= 40 ? "Passed" : "Failed";
-
-    document.getElementById("out3").textContent =
-`----Assignment 3----
-Score: ${score}
-Grade: ${grade}
-Status: ${status}`;
-}
-
-// Assignment 4
-function run4() {
-    let output = "-- Multiplication Table of 5 --\n";
-
-    for (let i = 1; i <= 5; i++) {
-        output += `5 x ${i} = ${5 * i}\n`;
-    }
-
-    output += "\n-- First number > 10 divisible by 6 --\n";
-
-    let number = 11;
-
-    while (true) {
-        if (number > 10 && number % 6 === 0) {
-            output += `Found: ${number}`;
-            break;
-        }
-        number++;
-    }
-
-    let count = 0;
-
-    output += "\n\n";
-
-    do {
-        count++;
-
-        if (count === 3) {
-            continue;
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Assignments</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
 
-        output += count + "\n";
-    } while (count < 5);
-
-    document.getElementById("out4").textContent = output.trimEnd();
-}
-
-// Assignment 5
-function run5() {
-    function rectangleArea(length = 5, width = 4) {
-        return length * width;
-    }
-
-    const arrowArea = (length = 5, width = 4) => {
-        return length * width;
-    };
-
-    let scopeError;
-
-    try {
-        {
-            let blockVar = "Inside block";
+        body {
+            font-family: Arial, sans-serif;
+            background: #100d20;
+            color: #f5f0ff;
+            min-height: 100vh;
+            padding: 25px 15px;
         }
 
-        console.log(blockVar);
-    } catch (error) {
-        scopeError = "Scope Test Error: " + error;
-    }
-
-    document.getElementById("out5").textContent =
-`Standard Function Area (Default 5x4): ${rectangleArea()}
-Arrow Function Area (Custom 10x3): ${arrowArea(10, 3)}
-${scopeError}`;
-}
-
-// Assignment 6
-function run6() {
-    const products = [
-        { name: "Laptop", price: 800 },
-        { name: "Mouse", price: 25 },
-        { name: "Keyboard", price: 45 }
-    ];
-
-    let output = "-- All Products (forEach) --\n";
-
-    products.forEach(function(product) {
-        output += `Item: ${product.name} - Price: $${product.price}\n`;
-    });
-
-    const affordableProducts = products.filter(function(product) {
-        return product.price < 50;
-    });
-
-    output += "\n-- Filtered Products (Price < $50) --\n";
-
-    output += "[ " + affordableProducts.map(function(product) {
-        return `{ name: '${product.name}', price: ${product.price} }`;
-    }).join(", ") + " ]";
-
-    const productTags = products.map(function(product) {
-        return product.name.toUpperCase() + " costs $" + product.price;
-    });
-
-    output += "\n\n-- Mapped Product Tags (map) --\n";
-    output += "[ " + productTags.map(function(tag) {
-        return JSON.stringify(tag);
-    }).join(", ") + " ]";
-
-    document.getElementById("out6").textContent = output;
-}
-
-// Capstone project
-function runCapstone() {
-    const inventory = [
-        { name: "Laptop", price: 800 },
-        { name: "Mouse", price: 25 }
-    ];
-
-    // Match the example values in your original code.
-    const newProductName = "Monitor";
-    const newProductPrice = 150;
-
-    if (
-        newProductName !== "" &&
-        Number.isFinite(newProductPrice) &&
-        newProductPrice >= 0
-    ) {
-        inventory.push({
-            name: newProductName,
-            price: Number(newProductPrice)
-        });
-    }
-
-    function getCategory(price) {
-        if (price < 100) {
-            return "Budget";
-        } else if (price >= 500) {
-            return "Premium";
-        } else {
-            return "Standard";
+        .container {
+            max-width: 950px;
+            margin: auto;
         }
-    }
 
-    let output = "--- Initializing Inventory System ---\n";
-    output += '[Prompt executed: User adds "Monitor" at "$150"]\n\n';
-    output += "--- Processing Inventory Roster (forEach) ---\n";
+        header {
+            text-align: center;
+            padding: 35px 15px;
+            margin-bottom: 25px;
+            background: linear-gradient(135deg, #30204f, #17132b);
+            border: 1px solid #7553a8;
+            border-radius: 20px;
+        }
 
-    inventory.forEach(function(product) {
-        output += `* Item: ${product.name} ($${product.price}) -> Category: ${getCategory(product.price)}\n`;
-    });
+        header h1 {
+            font-size: 30px;
+            color: #d9b8ff;
+            margin-bottom: 12px;
+        }
 
-    const calculateTotal = (items) => {
-        let total = 0;
+        header p {
+            color: #d0c5e5;
+            line-height: 1.6;
+        }
 
-        items.forEach(function(item) {
-            total += item.price;
-        });
+        .card {
+            background: #1b1730;
+            border: 1px solid #41325e;
+            border-radius: 16px;
+            padding: 22px;
+            margin-bottom: 20px;
+        }
 
-        return total;
-    };
+        .card h2 {
+            color: #d9b8ff;
+            font-size: 21px;
+            margin-bottom: 12px;
+        }
 
-    const affordableItems = inventory.filter(function(product) {
-        return product.price < 200;
-    });
+        .card p {
+            color: #c9bfdc;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
 
-    const reportList = inventory.map(function(product) {
-        return product.name.toUpperCase() + ": $" + product.price;
-    });
+        button {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            background: linear-gradient(135deg, #a56bff, #7540c8);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
 
-    output += "\n--- Financial Analytics ---\n";
-    output += "Total Inventory Value: $" + calculateTotal(inventory) + "\n";
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 18px #a56bff55;
+        }
 
-    output += "Filtered Affordable Items (Under $200): " +
-        JSON.stringify(affordableItems.map(function(product) {
-            return product.name;
-        })) + "\n";
+        .output-card {
+            background: #090b13;
+            border: 1px solid #7553a8;
+            border-radius: 16px;
+            padding: 22px;
+            margin-top: 25px;
+        }
 
-    output += "Formatted Report List: " + JSON.stringify(reportList);
+        .output-card h2 {
+            color: #bfa0ff;
+            margin-bottom: 15px;
+        }
 
-    document.getElementById("outCapstone").textContent = output;
-}
-
-// Display initial outputs when the page opens.
-run1();
-run3();
-run4();
-run5();
-run6();
-
-</script>
-
-</body>
-</html>
+        #output
